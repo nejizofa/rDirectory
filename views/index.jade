@@ -1,0 +1,75 @@
+extends layout
+
+block content
+    div(id="#{className}")
+        div.navbar.navbar-inverse.navbar-fixed-top
+            div.navbar-inner
+                div.container
+                    ul.nav
+                        li.active
+                            a(href="#{url}") local main site
+                        span(style="color:white;") &#8226;
+                        li
+                            a(href="http://www.paulmitchell.edu") paulmitchell.edu
+                        span(style="color:white;") &#8226;
+                        li
+                            a(href="http://directory.paulmitchell.edu") view all Paul Mitchell School locations
+        div.container
+            div.row-fluid.hidden-phone
+                div.span6.offset2(style="color: white;").heading
+                    h1 #{title}
+                div.span2
+                    img(src="/images/#{logowhite}")
+            div.row-fluid.visible-phone
+                div.span6.offset2(style="color: white;").heading
+                    div.media
+                        a.pull-left(href="#")
+                            img.media-object(src="/images/#{logowhite}")
+                        div.media-body
+                            h2.media-heading #{title}
+
+
+            div.row-fluid
+                div.span6.offset5.formField.well.hidden-phone
+                    form#wideform(action='/thankyou',method='post')
+                        label Name
+                        input(type="text", placeholder="Name", required="true", name="name").span12
+                        label Email
+                        input(type="email", placeholder="Email", required="true", name="email").span12
+                        label Text Me! Format 888-888-8888
+                        input(type="tel", placeholder="Cell Phone", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}').span12
+                        label Note
+                        textarea(placeholder="Note", name="note").span12
+                        input.hidden(name="campusid", value="#{campusid}")
+                        button.span11.btn.btn-success.btn-large Get More Info Today
+                div.span12.visible-phone.phonemargin
+                    div.formField.well
+                        form#smallform(href="/thankyou")
+                            label Name
+                            input(type="text", placeholder="Name", required="true", name="name").span12
+                            label Email
+                            input(type="email", placeholder="Email", required="true", name="email").span12
+                            label Text Me! Format 888-888-8888
+                            input(type="tel", placeholder="Cell Phone", name="phone").span12
+                            label Note
+                            textarea(placeholder="Note", name="note").span12
+                            input.hidden(name="campusid", value="#{campusid}")
+                            button.span11.btn.btn-success.btn-large Get More Info Today
+            div.row-fluid.hidden-phone
+                div.well.whiteBottom
+                    div.span3.offset2
+                        a.btn.btn-large.btn-inverse(href="#{url}") Main Site
+                    div.span3
+                        a.btn.btn-large.btn-inverse(href="#{url}/programs/") Enrollment Dates
+                    div.span3
+                        a.btn.btn-large.btn-inverse(href="#{url}/enroll-form/") Schedule a Tour
+                    div#footer.row-fluid
+                        div.container(style="color:black")
+                            p Why Choose Paul Mitchell Schools?
+                            span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+
+            div#footer.row-fluid.visible-phone
+                div.container
+                    p Why Choose Paul Mitchell Schools?
+                    span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+

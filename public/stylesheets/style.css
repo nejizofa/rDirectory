@@ -1,0 +1,180 @@
+body {
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#alert{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: #ddd;
+    color: #333;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.mapstyle{
+    width: 930px; height: 630px;
+    padding-top: 300px;
+}
+
+.navbar .nav {
+    float:none;
+    text-align: center;
+}
+.navbar .nav > li {
+    float:none;
+    display: inline-block;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #333333;
+    color: white;
+    background-image: url("/images/background.png");
+    background-repeat: repeat;
+}
+
+#wrap {
+    /*min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+    background-image: url('/images/direcback.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    max-width: 1160px;
+}
+
+#mobileWrap {
+    margin: 0 auto -60px;
+    max-width: 1160px;
+}
+
+#cosmowrap {
+    min-height: 100%;
+    /*height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+    background-image: url('/images/cosmogirl.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    max-width: 1160px;
+}
+
+#esteticwrap {
+    min-height: 100%;
+    /*height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+    background-image: url('/images/esteticgirl.png');
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 95px;
+    max-width: 1160px;
+}
+
+@media (max-width: 767px) {
+    #wrap {
+        min-height: 700px;
+    }
+}
+
+@media (min-width: 767px) {
+    #push,
+    #footer {
+        padding-top: 250px;
+    }
+}
+
+#push,
+#footer {
+    height: 60px;
+    color:white;
+    float: none;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+#wrap > .container {
+    padding-top: 60px;
+}
+@media (min-width: 767px) {
+    #cosmowrap > .container {
+        padding-top: 60px;
+    }
+}
+
+@media (min-width: 767px) {
+    #esteticwrap > .container {
+        padding-top: 60px;
+    }
+}
+.container .credit {
+    margin: 20px 0;
+}
+
+code {
+    font-size: 80%;
+}
+
+.background {
+    fill: none;
+    pointer-events: all;
+}
+
+#states {
+    fill: #aaa;
+}
+
+#states .active {
+    fill: orange;
+}
+
+#state-borders {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+path {
+    fill: #ccc;
+    stroke: #fff;
+}
+
+.formField{
+    background-color: #116FD4;
+    margin-top: 70px;
+}
+
+.phonemargin{
+    margin-top: 300px;
+    background-color: rgba(250,250,250,0.5);
+}
+.whiteBottom{
+    background-color: rgba(250,250,250,0.9);
+}
+.dropdown{
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+.heading{
+    text-align: right;
+}

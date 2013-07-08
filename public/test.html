@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="/javascripts/lodash.js"></script>
+    <script type="text/javascript">
+          $(document).ready(function(){
+              var domains = [];
+              _.each($("ul.locationslist li"), function(obj){
+                  //var addressValue = $(obj).attr("pm:campusid");
+                  var obj = $(obj);
+                  var campusid = obj[0].attributes[1].nodeValue;
+                  var url =obj.children()[0].href;
+                  domains.push({"url": url, "campusId": campusid});
+              })
+              console.log(JSON.stringify(domains));
+          });
+    </script>
+</head>
+
+<body>
+<ul class="locationslist">
+
+<li pm:state="Ohio" pm:campusid="5">
+    <a href="http://cincinnati.paulmitchell.edu/cincinnati-oh">Paul Mitchell The School - <span>Cincinnati OH</span></a>
+
+</li>
+
+<li pm:state="Missouri" pm:campusid="46">
+    <a href="http://school.paulmitchell.edu/st-louis-mo">Paul Mitchell The School - <span>St Louis MO</span></a>
+
+</li>
+
+<li pm:state="Oklahoma" pm:campusid="11">
+    <a href="http://imagine.paulmitchell.edu/norman-ok">Imagine - <span>Norman OK</span></a>
+
+</li>
+
+<li pm:state="New York" pm:campusid="3">
+    <a href="http://cactus.paulmitchell.edu/garden-city-ny">Cactus Academy - <span>Garden City NY</span></a>
+
+</li>
+
+<li pm:state="Arkansas" pm:campusid="10">
+    <a href="http://imagine.paulmitchell.edu/little-rock-ar">Imagine - <span>Little Rock AR</span></a>
+
+</li>
+
+<li pm:state="Indiana" pm:campusid="38">
+    <a href="http://school.paulmitchell.edu/indianapolis-in">Paul Mitchell The School - <span>Indianapolis IN</span></a>
+
+</li>
+
+<li pm:state="Illinois" pm:campusid="37">
+    <a href="http://school.paulmitchell.edu/normal-il">Paul Mitchell The School - <span>Normal IL</span></a>
+
+</li>
+
+<li pm:state="Oklahoma" pm:campusid="109">
+    <a href="http://school.paulmitchell.edu/tulsa-ok">Paul Mitchell The School - <span>Tulsa OK</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="28">
+    <a href="http://school.paulmitchell.edu/sherman-oaks-ca">Paul Mitchell The School - <span>Sherman Oaks CA</span></a>
+
+</li>
+
+<li pm:state="North Carolina" pm:campusid="77">
+    <a href="http://raleigh.paulmitchell.edu/raleigh-nc">Paul Mitchell The School - <span>Raleigh NC</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="74">
+    <a href="http://pasadena.paulmitchell.edu/alhambra-ca">Paul Mitchell The School - <span>Pasadena  CA</span></a>
+
+</li>
+
+<li pm:state="Florida" pm:campusid="32">
+    <a href="http://school.paulmitchell.edu/jacksonville-fl">Paul Mitchell The School - <span>Jacksonville FL</span></a>
+
+</li>
+
+<li pm:state="Georgia" pm:campusid="35">
+    <a href="http://school.paulmitchell.edu/atlanta-ga">Paul Mitchell The School - <span>Atlanta GA</span></a>
+
+</li>
+
+<li pm:state="Michigan" pm:campusid="44">
+    <a href="http://school.paulmitchell.edu/port-huron-mi">Paul Mitchell The School - <span>Great Lakes MI</span></a>
+
+</li>
+
+<li pm:state="New Jersey" pm:campusid="80">
+    <a href="http://lab.paulmitchell.edu/ewing-nj">The Lab - <span>Ewing NJ</span></a>
+
+</li>
+
+<li pm:state="Kansas" pm:campusid="39">
+    <a href="http://school.paulmitchell.edu/overland-park-ks">Paul Mitchell The School - <span>Overland Park KS</span></a>
+
+</li>
+
+<li pm:state="Idaho" pm:campusid="68">
+    <a href="http://boise.paulmitchell.edu/boise-id">Paul Mitchell The School - <span>Boise ID</span></a>
+
+</li>
+
+<li pm:state="Florida" pm:campusid="33">
+    <a href="http://school.paulmitchell.edu/orlando-fl">Paul Mitchell The School - <span>Orlando FL</span></a>
+
+</li>
+
+<li pm:state="Wisconsin" pm:campusid="88">
+    <a href="http://wisconsin.paulmitchell.edu/peshtigo-wi">The Wisconsin Academy - <span>Peshtigo wi</span></a>
+
+</li>
+
+<li pm:state="Florida" pm:campusid="34">
+    <a href="http://school.paulmitchell.edu/tampa-fl">Paul Mitchell The School - <span>Tampa FL</span></a>
+
+</li>
+
+<li pm:state="Tennessee" pm:campusid="52">
+    <a href="http://school.paulmitchell.edu/murfreesboro-tn">Paul Mitchell The School - <span>Murfreesboro TN</span></a>
+
+</li>
+
+<li pm:state="Michigan" pm:campusid="43">
+    <a href="http://school.paulmitchell.edu/escanaba-mi">Paul Mitchell The School - <span>Escanaba MI</span></a>
+
+</li>
+
+<li pm:state="New Hampshire" pm:campusid="14">
+    <a href="http://michaels.paulmitchell.edu/bedford-nh">Michael's School of Hair Design and Esthetics - <span>Bedford NH</span></a>
+
+</li>
+
+<li pm:state="Wisconsin" pm:campusid="72">
+    <a href="http://waukesha.paulmitchell.edu/waukesha-wi">The Academy - <span>Waukesha WI</span></a>
+
+</li>
+
+<li pm:state="New York" pm:campusid="71">
+    <a href="http://nyc.paulmitchell.edu/staten-island-ny">The Academy NYC - <span>New York City NY</span></a>
+
+</li>
+
+<li pm:state="North Dakota" pm:campusid="13">
+    <a href="http://jz.paulmitchell.edu/bismarck-nd">JZ Trend Academy - <span>Bismarck ND</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="24">
+    <a href="http://school.paulmitchell.edu/east-bay-ca">Paul Mitchell The School - <span>East Bay CA</span></a>
+
+</li>
+
+<li pm:state="Michigan" pm:campusid="45">
+    <a href="http://school.paulmitchell.edu/sterling-heights-mi">Paul Mitchell The School - <span>Michigan</span></a>
+
+</li>
+
+<li pm:state="Texas" pm:campusid="55">
+    <a href="http://school.paulmitchell.edu/houston-tx">Paul Mitchell The School - <span>Houston TX</span></a>
+
+</li>
+
+<li pm:state="Georgia" pm:campusid="78">
+    <a href="http://esani.paulmitchell.edu/alpharetta-ga">Paul Mitchell The School - <span>Esani</span></a>
+
+</li>
+
+<li pm:state="Florida" pm:campusid="9">
+    <a href="http://hi-tech.paulmitchell.edu/miami-fl">Hi-Tech the School of Cosmetology - <span>Miami FL</span></a>
+
+</li>
+
+<li pm:state="Kansas" pm:campusid="40">
+    <a href="http://school.paulmitchell.edu/wichita-ks">Paul Mitchell The School - <span>Wichita KS</span></a>
+
+</li>
+
+<li pm:state="South Carolina" pm:campusid="119">
+    <a href="http://school.paulmitchell.edu/greenville-sc">Paul Mitchell The School - <span>Greenville</span></a>
+
+</li>
+
+<li pm:state="Ohio" pm:campusid="82">
+    <a href="http://ohio.paulmitchell.edu/cleveland-oh">The Ohio Academy - <span>Cleveland OH</span></a>
+
+</li>
+
+<li pm:state="Oklahoma" pm:campusid="116">
+    <a href="http://ardmore.paulmitchell.edu/ardmore-ok">Paul Mitchell The School - <span>Ardmore OK</span></a>
+
+</li>
+
+<li pm:state="Tennessee" pm:campusid="105">
+    <a href="http://knoxville.paulmitchell.edu/knoxville-tn">Paul Mitchell The School - <span>Knoxville TN</span></a>
+
+</li>
+
+<li pm:state="Virginia" pm:campusid="60">
+    <a href="http://school.paulmitchell.edu/mclean-va">Paul Mitchell The School - <span>Tysons Corner VA</span></a>
+
+</li>
+
+<li pm:state="Maryland" pm:campusid="85">
+    <a href="http://temple.paulmitchell.edu/frederick-md">The Temple - <span>Frederick MD</span></a>
+
+</li>
+
+<li pm:state="New Jersey" pm:campusid="12">
+    <a href="http://jersey-shore.paulmitchell.edu/brick-nj">Paul Mitchell The School - <span>Jersey Shore</span></a>
+
+</li>
+
+<li pm:state="Texas" pm:campusid="70">
+    <a href="http://austin.paulmitchell.edu/austin-tx">Paul Mitchell The School - <span>Austin TX</span></a>
+
+</li>
+
+<li pm:state="Hawaii" pm:campusid="91">
+    <a href="http://honolulu.paulmitchell.edu/honolulu-hi">Paul Mitchell The School - <span>Honolulu HI</span></a>
+
+</li>
+
+<li pm:state="Iowa" pm:campusid="7">
+    <a href="http://davenport.paulmitchell.edu/davenport-ia">Paul Mitchell The School - <span>Davenport IA</span></a>
+
+</li>
+
+<li pm:state="Oregon" pm:campusid="49">
+    <a href="http://school.paulmitchell.edu/portland-or">Paul Mitchell The School - <span>Portland OR</span></a>
+
+</li>
+
+<li pm:state="Connecticut" pm:campusid="16">
+    <a href="http://north-haven.paulmitchell.edu/north-haven-ct">Paul Mitchell The School - <span>North Haven CT</span></a>
+
+</li>
+
+<li pm:state="Connecticut" pm:campusid="31">
+    <a href="http://school.paulmitchell.edu/danbury-ct">Paul Mitchell The School - <span>Danbury CT</span></a>
+
+</li>
+
+<li pm:state="Maryland" pm:campusid="8">
+    <a href="http://hair-expressions.paulmitchell.edu/rockville-md">Hair Expressions Academy - <span>Rockville MD</span></a>
+
+</li>
+
+<li pm:state="Colorado" pm:campusid="29">
+    <a href="http://school.paulmitchell.edu/colorado-springs-co">Paul Mitchell The School - <span>Colorado Springs CO</span></a>
+
+</li>
+
+<li pm:state="Illinois" pm:campusid="89">
+    <a href="http://trend-setters.paulmitchell.edu/bradley-il">Paul Mitchell The School - <span>Bradley IL</span></a>
+
+</li>
+
+<li pm:state="Washington" pm:campusid="61">
+    <a href="http://school.paulmitchell.edu/spokane-wa">Paul Mitchell The School - <span>Spokane WA</span></a>
+
+</li>
+
+<li pm:state="North Carolina" pm:campusid="4">
+    <a href="http://carolina.paulmitchell.edu/gastonia-nc">Paul Mitchell The School - <span>Gastonia NC</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="66">
+    <a href="http://safavi.paulmitchell.edu/modesto-ca">Safavi Institute of Cosmetology and Esthetics - <span>Modesto CA</span></a>
+
+</li>
+
+<li pm:state="Pennsylvania" pm:campusid="64">
+    <a href="http://pulse.paulmitchell.edu/downingtown-pa">Pulse Beauty Academy - <span>Downingtown PA</span></a>
+
+</li>
+
+<li pm:state="Utah" pm:campusid="59">
+    <a href="http://school.paulmitchell.edu/st-george-ut">Paul Mitchell The School - <span>St George UT</span></a>
+
+</li>
+
+<li pm:state="Utah" pm:campusid="57">
+    <a href="http://school.paulmitchell.edu/provo-ut">Paul Mitchell The School - <span>Provo UT</span></a>
+
+</li>
+
+<li pm:state="Tennessee" pm:campusid="54">
+    <a href="http://school.paulmitchell.edu/nashville-tn">Paul Mitchell The School - <span>Nashville TN</span></a>
+
+</li>
+
+<li pm:state="Colorado" pm:campusid="30">
+    <a href="http://school.paulmitchell.edu/denver-co">Paul Mitchell The School - <span>Denver CO</span></a>
+
+</li>
+
+<li pm:state="Maryland" pm:campusid="114">
+    <a href="http://jessup.paulmitchell.edu/jessup-md">Paul Mitchell The School - <span>Jessup MD</span></a>
+
+</li>
+
+<li pm:state="Illinois" pm:campusid="36">
+    <a href="http://school.paulmitchell.edu/chicago-il">Paul Mitchell The School - <span>Chicago IL</span></a>
+
+</li>
+
+<li pm:state="Missouri" pm:campusid="84">
+    <a href="http://system.paulmitchell.edu/springfield-mo">The System - <span>Springfield MO</span></a>
+
+</li>
+
+<li pm:state="Louisiana" pm:campusid="93">
+    <a href="http://vanguard.paulmitchell.edu/slidell-la">Vanguard College - <span>Slidell LA</span></a>
+
+</li>
+
+<li pm:state="Wisconsin" pm:campusid="62">
+    <a href="http://school.paulmitchell.edu/monroe-wi">Paul Mitchell The School - <span>Monroe WI</span></a>
+
+</li>
+
+<li pm:state="Delaware" pm:campusid="76">
+    <a href="http://delaware.paulmitchell.edu/newark-de">Paul Mitchell The School - <span>Delaware</span></a>
+
+</li>
+
+<li pm:state="Arkansas" pm:campusid="22">
+    <a href="http://school.paulmitchell.edu/fayetteville-ar">Paul Mitchell The School - <span>Arkansas</span></a>
+
+</li>
+
+<li pm:state="Utah" pm:campusid="58">
+    <a href="http://school.paulmitchell.edu/salt-lake-city-ut">Paul Mitchell The School - <span>Salt Lake City UT</span></a>
+
+</li>
+
+<li pm:state="Pennsylvania" pm:campusid="2">
+    <a href="http://bella-capelli.paulmitchell.edu/pittsburgh-pa">Bella Capelli Academy - <span>Pittsburgh PA</span></a>
+
+</li>
+
+<li pm:state="Kentucky" pm:campusid="42">
+    <a href="http://school.paulmitchell.edu/louisville-ky">Paul Mitchell The School - <span>Louisville KY</span></a>
+
+</li>
+
+<li pm:state="IL" pm:campusid="120">
+    <a href="http://school.paulmitchell.edu/lombard-il">Paul Mitchell The School - <span>Lombard</span></a>
+
+</li>
+
+<li pm:state="Nevada" pm:campusid="47">
+    <a href="http://school.paulmitchell.edu/las-vegas-nv">Paul Mitchell The School - <span>Las Vegas NV</span></a>
+
+</li>
+
+<li pm:state="Alabama" pm:campusid="20">
+    <a href="http://school.paulmitchell.edu/huntsville-al">Paul Mitchell The School - <span>Huntsville AL</span></a>
+
+</li>
+
+<li pm:state="Virginia" pm:campusid="65">
+    <a href="http://rudy-kelly.paulmitchell.edu/virginia-beach-va">Rudy and Kelly Academy - <span>Virginia Beach VA</span></a>
+
+</li>
+
+<li pm:state="New Jersey" pm:campusid="19">
+    <a href="http://parisian.paulmitchell.edu/hackensack-nj">Parisian Beauty Academy - <span>Hackensack NJ</span></a>
+
+</li>
+
+<li pm:state="Kentucky" pm:campusid="41">
+    <a href="http://school.paulmitchell.edu/lexington-ky">Paul Mitchell The School - <span>Lexington KY</span></a>
+
+</li>
+
+<li pm:state="Idaho" pm:campusid="79">
+    <a href="http://hair-academy.paulmitchell.edu/rexburg-id">The Hair Academy - <span>Rexburg ID</span></a>
+
+</li>
+
+<li pm:state="New York" pm:campusid="97">
+    <a href="http://school.paulmitchell.edu/schenectady-ny">Paul Mitchell The School - <span>Schenectady NY</span></a>
+
+</li>
+
+<li pm:state="Louisiana" pm:campusid="98">
+    <a href="http://vanguard.paulmitchell.edu/metairie-la">Vanguard College - <span>Metairie LA</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="73">
+    <a href="http://sacramento.paulmitchell.edu/sacramento-ca">Paul Mitchell The School - <span>Sacramento CA</span></a>
+
+</li>
+
+<li pm:state="South Carolina" pm:campusid="63">
+    <a href="http://school.paulmitchell.edu/charleston-sc">Paul Mitchell The School - <span>Charleston SC</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="75">
+    <a href="http://temecula.paulmitchell.edu/temecula-ca">Paul Mitchell The School - <span>Temecula CA</span></a>
+
+</li>
+
+<li pm:state="Nevada" pm:campusid="83">
+    <a href="http://reno.paulmitchell.edu/reno-nv">Paul Mitchell The School - <span>Reno NV</span></a>
+
+</li>
+
+<li pm:state="Illinois" pm:campusid="90">
+    <a href="http://trend-setters.paulmitchell.edu/tinley-park-il">Paul Mitchell The School - <span>Tinley Park IL</span></a>
+
+</li>
+
+<li pm:state="Louisiana" pm:campusid="92">
+    <a href="http://vanguard.paulmitchell.edu/baton-rouge-la">Vanguard College - <span>Baton Rouge LA</span></a>
+
+</li>
+
+<li pm:state="Utah" pm:campusid="112">
+    <a href="http://school.paulmitchell.edu/ogden-ut">Paul Mitchell The School - <span>Ogden UT</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="67">
+    <a href="http://san-francisco.paulmitchell.edu/san-francisco-ca">San Francisco Institute of Esthetics &amp; Cosmetology - <span>San Francisco CA</span></a>
+
+</li>
+
+<li pm:state="Texas" pm:campusid="106">
+    <a href="http://dallas.paulmitchell.edu/arlington-tx">Paul Mitchell The School - <span>Arlington TX</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="27">
+    <a href="http://school.paulmitchell.edu/santa-barbara-ca">Paul Mitchell The School - <span>Santa Barbara CA</span></a>
+
+</li>
+
+<li pm:state="Virginia" pm:campusid="113">
+    <a href="http://school.paulmitchell.edu/woodbridge-va">Paul Mitchell The School - <span>Woodbridge VA</span></a>
+
+</li>
+
+<li pm:state="North Carolina" pm:campusid="48">
+    <a href="http://school.paulmitchell.edu/fayetteville-nc">Paul Mitchell The School - <span>Fayetteville NC</span></a>
+
+</li>
+
+<li pm:state="Texas" pm:campusid="56">
+    <a href="http://school.paulmitchell.edu/san-antonio-tx">Paul Mitchell The School - <span>San Antonio TX</span></a>
+
+</li>
+
+<li pm:state="Tennessee" pm:campusid="53">
+    <a href="http://school.paulmitchell.edu/bartlett-tn">Paul Mitchell The School - <span>Memphis TN</span></a>
+
+</li>
+
+<li pm:state="Pennsylvania" pm:campusid="1">
+    <a href="http://bella-capelli.paulmitchell.edu/monroeville-pa">Bella Capelli Academy - <span>Monroeville PA</span></a>
+
+</li>
+
+<li pm:state="Rhode Island" pm:campusid="50">
+    <a href="http://school.paulmitchell.edu/cranston-ri">Paul Mitchell The School - <span>Rhode Island</span></a>
+
+</li>
+
+<li pm:state="Wisconsin" pm:campusid="104">
+    <a href="http://greenbay.paulmitchell.edu/green-bay-wi">Paul Mitchell The School - <span>Green Bay WI</span></a>
+
+</li>
+
+<li pm:state="Texas" pm:campusid="6">
+    <a href="http://dallas.paulmitchell.edu/dallas-tx">Paul Mitchell The School - <span>Dallas TX</span></a>
+
+</li>
+
+<li pm:state="Arizona" pm:campusid="21">
+    <a href="http://school.paulmitchell.edu/phoenix-az">Paul Mitchell The School - <span>Phoenix AZ</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="26">
+    <a href="http://school.paulmitchell.edu/san-diego-ca">Paul Mitchell The School - <span>San Diego CA</span></a>
+
+</li>
+
+<li pm:state="South Carolina" pm:campusid="51">
+    <a href="http://school.paulmitchell.edu/columbia-sc">Paul Mitchell The School - <span>Columbia SC</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="15">
+    <a href="http://mti.paulmitchell.edu/sacramento-ca">Paul Mitchell The School at MTI College - <span>Sacramento CA</span></a>
+
+</li>
+
+<li pm:state="Florida" pm:campusid="108">
+    <a href="http://fort-myers.paulmitchell.edu/fort-myers-fl">Paul Mitchell The School - <span>Fort Myers FL</span></a>
+
+</li>
+
+<li pm:state="North Carolina" pm:campusid="102">
+    <a href="http://carolina.paulmitchell.edu/charlotte-nc">Paul Mitchell The School - <span>Charlotte NC</span></a>
+
+</li>
+
+<li pm:state="Alabama" pm:campusid="94">
+    <a href="http://birmingham.paulmitchell.edu/birmingham-al">Paul Mitchell The School - <span>Birmingham AL</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="25">
+    <a href="http://school.paulmitchell.edu/fresno-ca">Paul Mitchell The School - <span>Fresno CA</span></a>
+
+</li>
+
+<li pm:state="Ohio" pm:campusid="81">
+    <a href="http://ohio.paulmitchell.edu/columbus-oh">The Ohio Academy - <span>Columbus OH</span></a>
+
+</li>
+
+<li pm:state="California" pm:campusid="23">
+    <a href="http://school.paulmitchell.edu/costa-mesa-ca">Paul Mitchell The School - <span>Costa Mesa CA</span></a>
+
+</li>
+
+<li pm:state="NH" pm:campusid="121">
+    <a href="http://school.paulmitchell.edu/portsmouth-nh">Paul Mitchell The School - <span>Portsmouth</span></a>
+
+</li>
+
+</ul>
+</body>
+</html>
