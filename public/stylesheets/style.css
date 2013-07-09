@@ -32,10 +32,8 @@ a {
 html,
 body {
     height: 100%;
-    background-color: #333333;
+    background-color: #292a2e;
     color: white;
-    background-image: url("/images/background.png");
-    background-repeat: repeat;
 }
 
 #wrap {
@@ -47,7 +45,7 @@ body {
     background-image: url('/images/direcback.png');
     background-repeat: no-repeat;
     background-position: right;
-    /*max-width: 1160px;*/
+    max-width: 1160px;
 }
 
 #mobileWrap {
@@ -66,7 +64,7 @@ body {
     background-image: url('/images/cosmogirl.png');
     background-repeat: no-repeat;
     background-position: left;
-    /*max-width: 1160px;    */
+    max-width: 1160px;
 }
 
 #esteticwrap {
@@ -79,7 +77,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: 0;
     background-position-y: 95px;
-    /*max-width: 1160px;*/
+    max-width: 1160px;
 }
 
 @media (max-width: 767px) {
