@@ -1,5 +1,5 @@
 body {
-  font: 14px Helvetica, Arial, sans-serif;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -7,7 +7,7 @@ a {
 }
 
 #alert{
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     background-color: #ddd;
     color: #333;
@@ -47,16 +47,18 @@ body {
     background-image: url('/images/direcback.png');
     background-repeat: no-repeat;
     background-position: right;
-    max-width: 1160px;
+    /*max-width: 1160px;*/
 }
 
 #mobileWrap {
+
     margin: 0 auto -60px;
-    max-width: 1160px;
+    margin-top: 90px;
+    max-width: 400px;
 }
 
 #cosmowrap {
-    min-height: 100%;
+    /*min-height: 100%;
     /*height: auto !important;
     height: 100%;
     /* Negative indent footer by it's height */
@@ -64,11 +66,11 @@ body {
     background-image: url('/images/cosmogirl.png');
     background-repeat: no-repeat;
     background-position: left;
-    max-width: 1160px;
+    /*max-width: 1160px;    */
 }
 
 #esteticwrap {
-    min-height: 100%;
+    /*min-height: 100%;
     /*height: auto !important;
     height: 100%;
     /* Negative indent footer by it's height */
@@ -77,7 +79,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: 0;
     background-position-y: 95px;
-    max-width: 1160px;
+    /*max-width: 1160px;*/
 }
 
 @media (max-width: 767px) {
@@ -110,9 +112,20 @@ body {
     }
 }
 
+/* Override Bootstrap Responsive CSS fixed navbar */
+@media (max-width: 767px) {
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        position: fixed;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
 #wrap > .container {
     padding-top: 60px;
 }
+
 @media (min-width: 767px) {
     #cosmowrap > .container {
         padding-top: 60px;
@@ -124,6 +137,7 @@ body {
         padding-top: 60px;
     }
 }
+
 .container .credit {
     margin: 20px 0;
 }

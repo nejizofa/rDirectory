@@ -1497,15 +1497,13 @@ $(document).ready(function() {
                 .style("stroke-width", 1.5 / k + "px");
         }
     }
-    renderMap();
-    function zoomMap()
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) )
     {
-        var curheight = $("#map").height();
-        var curwidth = $("#map").width()-50;
-        $('#svgId').animate({height: curheight, width: curwidth}, 500);
+
     }
-    $(window).resize(function(){
-          //zoomMap();
-    });
+    else
+    {
+     renderMap();
+    }
 
 });
