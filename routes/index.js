@@ -1362,7 +1362,7 @@ exports.index = function(req, res){
     {
         params.title = "Cosmetology";
         params.className = "cosmowrap";
-        params.background = "cosmogirl.png";
+        params.background = "cosmoback.png";
     }
     else
     {
