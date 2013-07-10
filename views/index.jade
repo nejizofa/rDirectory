@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div(id="#{className}", style="margin-top: 100px")
+    div(id="#{className}")
         div.navbar.navbar-inverse.navbar-fixed-top
             div.navbar-inner
                 div.container
@@ -30,8 +30,10 @@ block content
 
 
             div.row-fluid
-                div.span6.offset5.formField.well.hidden-phone
-                    form#wideform(action='/thankyou',method='post')
+                div.span6
+                    img(src="/images/#{background}", width="100%")
+                div.span6.formField.well
+                    form#wideform(action='/#{schoolName}/thankyou',method='post')
                         label Name
                         input(type="text", placeholder="Name", required="true", name="name").span12
                         label Email
@@ -42,19 +44,7 @@ block content
                         textarea(placeholder="Note", name="note").span12
                         input.hidden(name="campusid", value="#{campusid}")
                         button.span11.btn.btn-success.btn-large Get More Info Today
-                div.span12.visible-phone.phonemargin
-                    div.formField.well
-                        form#smallform(href="/thankyou")
-                            label Name
-                            input(type="text", placeholder="Name", required="true", name="name").span12
-                            label Email
-                            input(type="email", placeholder="Email", required="true", name="email").span12
-                            label Text Me! Format 888-888-8888
-                            input(type="tel", placeholder="Cell Phone", name="phone").span12
-                            label Note
-                            textarea(placeholder="Note", name="note").span12
-                            input.hidden(name="campusid", value="#{campusid}")
-                            button.span11.btn.btn-success.btn-large Get More Info Today
+
             div.row-fluid.hidden-phone
                 div.well.whiteBottom
                     div.span3.offset2

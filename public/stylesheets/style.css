@@ -37,10 +37,6 @@ body {
 }
 
 #wrap {
-    /*min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by it's height */
     margin: 0 auto -60px;
     background-image: url('/images/direcback.png');
     background-repeat: no-repeat;
@@ -56,27 +52,12 @@ body {
 }
 
 #cosmowrap {
-    /*min-height: 100%;
-    /*height: auto !important;
-    height: 100%;
-    /* Negative indent footer by it's height */
     margin: 0 auto -60px;
-    background-image: url('/images/cosmogirl.png');
-    background-repeat: no-repeat;
-    background-position: left;
     max-width: 1160px;
 }
 
 #esteticwrap {
-    /*min-height: 100%;
-    /*height: auto !important;
-    height: 100%;
-    /* Negative indent footer by it's height */
     margin: 0 auto -60px;
-    background-image: url('/images/esteticgirl.png');
-    background-repeat: no-repeat;
-    background-position-x: 0;
-    background-position-y: 95px;
     max-width: 1160px;
 }
 
@@ -133,6 +114,15 @@ body {
 @media (min-width: 767px) {
     #esteticwrap > .container {
         padding-top: 60px;
+    }
+}
+
+@media (max-width: 767px){
+    #cosmowrap{
+        margin-top: 100px;
+    }
+    #esteticwrap{
+        margin-top:100px;
     }
 }
 

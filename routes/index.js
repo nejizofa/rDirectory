@@ -1357,15 +1357,18 @@ exports.index = function(req, res){
         }
     });
 
+    params.schoolName = req.params.schoolName;
     if(req.params.program == "cosmetology")
     {
         params.title = "Cosmetology";
         params.className = "cosmowrap";
+        params.background = "cosmogirl.png";
     }
     else
     {
-        params.title = "Estetics";
+        params.title = "Esthetics";
         params.className = "esteticwrap";
+        params.background = "esteticgirl.png";
     }
 
     res.render('index', params);

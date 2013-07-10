@@ -1503,7 +1503,7 @@ $(document).ready(function() {
     }
     else
     {
-     renderMap();
+        renderMap();
     }
 
 });
