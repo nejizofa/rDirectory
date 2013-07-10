@@ -28,7 +28,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-
+app.post('/:schoolName/thankyou', thankyou.index);
 app.post('/thankyou', thankyou.index);
 app.get('/:schoolName/:program', routes.index);
 app.get('/:schoolName/:program/:campusId', routes.index);
