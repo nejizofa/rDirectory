@@ -1385,6 +1385,23 @@ $(document).ready(function() {
         window.location = thisObj.val();
     });
 
+    function setMapScale()
+    {
+        $('#svgId').css('zoom', 0.01);
+        var cW = $('#map').width();
+        var zoom = cW / 960;
+        if (zoom > 1)
+        {
+            zoom = 1;
+        }
+        $('#svgId').css('zoom', zoom);
+
+        $('#stateLabel').css('zoom', $('#svgId').css('zoom'));
+        var curheight = $(window).height() - 250;
+        $('#stateLabel').css('height', curheight);
+        $('#svgId').css('height', curheight);
+    }
+
     function renderMap(width, height)
     {
         var width = 960,
@@ -1444,14 +1461,14 @@ $(document).ready(function() {
             curwidth = width;
             curheight = height;
             if (d && centered !== d) {
-                $('#map').animate({"padding-top": 0}, 500);
-                curheight = 800;
+                $('#map').animate({"padding-top": 20}, 500);
+                curheight = $(window).height() - 250;
                 curwidth = 1170;
                 $('#svgId').animate({height: curheight, width: curwidth}, 500);
                 var centroid = path.centroid(d);
                 x = centroid[0];
                 y = centroid[1];
-                k = 4;
+                k = 3;
                 centered = d;
                 var result = $.grep(stateProperties, function(e){ return e.id == d.id; });
                 var newDiv = $("<div>");
@@ -1460,7 +1477,7 @@ $(document).ready(function() {
                 newDiv.css("position", "absolute");
                 newDiv.css("background-color", "rgba(250,250,250,0.5)");
                 newDiv.css("width", "350px");
-                newDiv.css("height", "800px");
+                newDiv.css("height", curheight);
                 newDiv.css("overflow-y", "scroll");
                 newDiv.css("overflow-x", "wrap");
                 newDiv.css("right", "0");
@@ -1484,7 +1501,7 @@ $(document).ready(function() {
                 y = curheight / 2;
                 k = 1;
                 centered = null;
-                $('#map').animate({"padding-top": 300}, 500);
+                $('#map').animate({"padding-top": 20}, 500);
                 d3.select('svg').attr('height', height).attr('width', width);
             }
 
@@ -1495,6 +1512,8 @@ $(document).ready(function() {
                 .duration(750)
                 .attr("transform", "translate(" + curwidth / 2 + "," + curheight / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
                 .style("stroke-width", 1.5 / k + "px");
+
+            setMapScale();
         }
     }
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) )
@@ -1504,6 +1523,11 @@ $(document).ready(function() {
     else
     {
         renderMap();
+        setMapScale();
+        $(window).resize(function(){
+            setMapScale();
+
+        })
     }
 
 });

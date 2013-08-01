@@ -17,7 +17,12 @@ a {
 
 .mapstyle{
     width: 930px; height: 630px;
-    padding-top: 300px;
+    padding-top: 20px;
+}
+
+.navbar
+{
+    background: black;
 }
 
 .navbar .nav {
@@ -27,6 +32,11 @@ a {
 .navbar .nav > li {
     float:none;
     display: inline-block;
+
+}
+.navbar .nav > li > a {
+    color:#fff;
+    text-shadow: none;
 }
 
 html,
@@ -70,7 +80,7 @@ body {
 @media (min-width: 767px) {
     #push,
     #footer {
-        padding-top: 250px;
+       /* padding-top: 250px; */
     }
 }
 
@@ -82,6 +92,8 @@ body {
     text-align: center;
 }
 
+
+
 @media (max-width: 767px) {
     #footer {
         margin-left: -20px;
@@ -89,10 +101,25 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
+    .formField {
+        margin-left:46% !important;
+    }
+}
+@media (max-width: 540px) {
+    .formField {
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+    #mainTd {
+        background-image:none !important;
+    }
+    .navbar {
+        display:none;
+    }
 }
 
 /* Override Bootstrap Responsive CSS fixed navbar */
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
     .navbar-fixed-top,
     .navbar-fixed-bottom {
         position: fixed;
@@ -124,7 +151,7 @@ body {
     #esteticwrap{
         margin-top:100px;
     }
-}
+}      */
 
 .container .credit {
     margin: 20px 0;
@@ -172,6 +199,9 @@ path {
 }
 .whiteBottom{
     background-color: rgba(250,250,250,0.9);
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
 }
 .dropdown{
     margin-top:15px;
