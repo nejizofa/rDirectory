@@ -19,11 +19,9 @@ block content
                 tr
                     td(id="mainTd", style="max-width:924px; background-image:url('/images/#{background}'); background-repeat:no-repeat;")
                         div.hidden-phone(style="text-align:right;")
-                                img(src="/images/#{title}.png", style="margin-right:15px")
-                                img(id="logo", src="/images/#{logowhite}")
+                                img(id="logo", src="/images/#{logowhite}", style="margin-right:95px")
                         div.visible-phone(style="text-align:center;")
                                     a(href="#")
-                                        img(src="/images/#{title}.png", style="margin-right:15px")
                                         img(id="logo", src="/images/#{logowhite}", style="width:150px;")
 
 
@@ -31,22 +29,25 @@ block content
                         div
                             div(style="margin-top:10px;")
 
-                            div.formField.well(style="width:220px; margin-left:58%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
+                            div.formField.well(style="width:220px; margin-left:65%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
                                 form#wideform(action='/#{schoolName}/thankyou',method='post', style="margin:0px;")
                                     div(style="width:100%")
                                         input(type="text", placeholder="Name", required="true", name="name")
 
                                     input(type="email", placeholder="Email", required="true", name="email")
-
+                                    input(type="hidden", value="#{type}", name="type")
                                     input(type="tel", placeholder="Cell Phone Ex 888-888-8888", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}')
-
+                                    select(name="program")
+                                        option(value="Cosmetology") Cosmetology
+                                        option(value="Esthetics") Esthetics
+                                        option(value="Barbering") Barbering
                                     textarea(placeholder="Note", name="note")
                                     input.hidden(name="campusid", value="#{campusid}")
                                     button.btn.btn-success.btn-large(style="width:100%;") Get More Info Today
                 tr
                     td(style="max-width:924px;")
                         div.hidden-phone
-                            div.well.whiteBottom(style="border-top:3px solid #a5a5a5; min-height:500px; ")
+                            div.well.whiteBottom(style="border-top:3px solid #a5a5a5; min-height:300px; ")
                                 table(style="width:100%", cellpadding="0", cellspacing="0")
                                     tr
                                         td(width="33%", style="text-align:center;")
@@ -59,11 +60,13 @@ block content
                                             a(href="#{url}/enroll-form/")
                                                 img(src="/images/schedulebtn.png")
 
-
-                                div#footer(style="margin-top:20px;")
-                                    div(style="color:black")
-                                        p Why Choose Paul Mitchell Schools?
-                                        span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                                div#contentSection(style="width:100%")
+                                    div(style="width:66%; float:left; color:black; font-size:140%") Careers in beauty, cosmetology and hair design today can be both personally and financially rewarding. Following you beauty school education as a Paul Mitchell-trained professional, you will realize your artistic dreams and work as a beauty professional almost anywhere in the world. Whether you choose to create fashion behind a chair in the salon; own your own salon or spa business; or opt for the excitement of a career in fashion, feature film, TV, or product education, a Paul Mitchell School will help you reach your artistic, technical and lifestyle goals.
+                                    div(style="float:left")
+                                        img(src="/images/areyouit.png")
+                            div#footer(style="margin-top:20px;")
+                                div(style="color:white; font-size:140%;")
+                                    span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
 
                         div#footer.visible-phone
                             div

@@ -1330,6 +1330,7 @@ exports.index = function(req, res){
                 if(campusId == school.campusid)
                 {
                     params = school;
+                    params.type = 'Directory';
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
@@ -1343,6 +1344,7 @@ exports.index = function(req, res){
                 if(schoolName == subName)
                 {
                     params = school;
+                    params.type = "PPC";
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
@@ -1358,18 +1360,11 @@ exports.index = function(req, res){
     });
 
     params.schoolName = req.params.schoolName;
-    if(req.params.program == "cosmetology")
-    {
-        params.title = "Cosmetology";
-        params.className = "cosmowrap";
-        params.background = "cosmoback.png";
-    }
-    else
-    {
-        params.title = "Esthetics";
-        params.className = "esteticwrap";
-        params.background = "esteticgirl.png";
-    }
+
+    params.title = "Beauty and Cosmetology | " + params.name + " | " + params.city + ", " + params.state;
+    params.className = "cosmowrap";
+    params.background = "modelimage.png";
+
 
     res.render('index', params);
 };

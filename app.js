@@ -30,8 +30,8 @@ if ('development' == app.get('env')) {
 
 app.post('/:schoolName/thankyou', thankyou.index);
 app.post('/thankyou', thankyou.index);
-app.get('/:schoolName/:program', routes.index);
-app.get('/:schoolName/:program/:campusId', routes.index);
+app.get('/:schoolName/areyouit', routes.index);
+app.get('/:schoolName/areyouit/:campusId', routes.index);
 app.get('/', directory.index);
 
 http.createServer(app).listen(app.get('port'), function(){

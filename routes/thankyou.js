@@ -1352,12 +1352,20 @@ exports.index = function(req, res){
             var phone = {personid: result.insertId, phone: req.body.phone, descr: 'Home Mobile', main:1};
             connection.query('INSERT INTO typef_person_phone SET ?', phone, function(err, result){
             });
-            var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "PaulMitchell Directory Leads"};
+            if(typeof req.body.type == 'undefined' || req.body.type == 'Directory')
+            {
+                var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "PaulMitchell Directory Leads"};
+            }
+            else
+            {
+                var enroll = {enrollid: result.insertId, source: "PPC", sourcetext: "Local PPC Campaign"};
+            }
+
             connection.query('INSERT INTO pmae_enroll SET ?', enroll, function(err, result){
             })
             if(req.body.note != '')
             {
-                var note = {linkid: result.insertId, linktype: 'enroll', note: req.body.note , datecreated: new Date()};
+                var note = {linkid: result.insertId, linktype: 'enroll', note: "Course of Interest: "+req.body.program+" Additional Notes: "+ req.body.note , datecreated: new Date()};
                 connection.query('INSERT INTO typef_note SET ?', note, function(err, result){
                 })
             }

@@ -1370,7 +1370,7 @@ $(document).ready(function() {
                 {
                     $("#stateSchools").append($("<option>", { value : schoolId+"/cosmetology/"+school.campusid}).text(school.name));
                 }*/
-                $("#stateSchools").append($("<option>", { value : schoolId+"/cosmetology/"+school.campusid}).text(school.name));
+                $("#stateSchools").append($("<option>", { value : schoolId+"/areyouit/"+school.campusid}).text(school.name));
             });
         });
     });
@@ -1488,7 +1488,7 @@ $(document).ready(function() {
                     var subDiv = $("<div>");
                     subDiv.css("padding", "15px");
                     var schoolId = obj.url.substring(obj.url.lastIndexOf("/"));
-                    var link = $("<a href='"+schoolId+"/cosmetology/"+obj.campusid+"'>");
+                    var link = $("<a href='"+schoolId+"/areyouit/"+obj.campusid+"'>");
                     var image = $("<img src='./images"+obj.logo+"'>");
                     link.append(image);
                     subDiv.append(link);
