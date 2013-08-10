@@ -1361,7 +1361,7 @@ exports.index = function(req, res){
 
     params.schoolName = req.params.schoolName;
 
-    params.title = "Beauty and Cosmetology | " + params.name + " | " + params.city + ", " + params.state;
+    params.title = "Beauty and Cosmetology | Paul Mitchell the School | " + params.city + ", " + params.state;
     params.className = "cosmowrap";
     params.background = "modelImage.png";
 
