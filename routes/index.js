@@ -1363,7 +1363,7 @@ exports.index = function(req, res){
 
     params.title = "Beauty and Cosmetology | " + params.name + " | " + params.city + ", " + params.state;
     params.className = "cosmowrap";
-    params.background = "modelimage.png";
+    params.background = "modelImage.png";
 
 
     res.render('index', params);
