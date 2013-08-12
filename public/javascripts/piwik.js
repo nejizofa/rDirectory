@@ -3,7 +3,10 @@ document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/ja
 
 try {
     var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
+
     piwikTracker.trackPageView();
     piwikTracker.enableLinkTracking();
     console.log('Success');
-} catch( err ) {}
+} catch( err ) {
+    console.log(err);
+}
