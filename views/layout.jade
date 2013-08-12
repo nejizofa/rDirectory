@@ -15,4 +15,12 @@ html
 
   body
     block content
-    script(type="text/javascript", src="/javascripts/piwik.js")
+    script.
+      var pkBaseURL = (("https:" == document.location.protocol) ? "https://analytics.centerhive.com/" : "http://analytics.centerhive.com/");
+      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    script.
+      try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+      } catch( err ) {}
