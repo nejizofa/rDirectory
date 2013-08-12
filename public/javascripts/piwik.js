@@ -7,6 +7,7 @@ try {
     var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
     piwikTracker.trackPageView();
     piwikTracker.enableLinkTracking();
+    console.log('Success');
 } catch( err ) {}
 </script><noscript><p><img src="http://analytics.centerhive.com/piwik.php?idsite=6" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
