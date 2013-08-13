@@ -20,6 +20,8 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.cookieParser());
+app.use(express.session({secret: "pmD!rect0ry"}));
 app.use(app.router);
 
 
@@ -30,6 +32,7 @@ if ('development' == app.get('env')) {
 
 app.post('/:schoolName/thankyou', thankyou.index);
 app.post('/thankyou', thankyou.index);
+app.get('/:leadSource', directory.index);
 app.get('/:schoolName/areyouit', routes.index);
 app.get('/:schoolName/areyouit/:campusId', routes.index);
 app.get('/', directory.index);

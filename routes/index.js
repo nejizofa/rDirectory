@@ -1330,7 +1330,7 @@ exports.index = function(req, res){
                 if(campusId == school.campusid)
                 {
                     params = school;
-                    params.type = 'Directory';
+                    params.type = req.session.leadSource;
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
