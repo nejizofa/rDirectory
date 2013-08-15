@@ -1,7 +1,7 @@
 exports.index = function(req, res){
 
     var params = {};
-    params.title = 'Paul Mitchell the School -- Directory';
+    params.title = 'Beauty and Cosmetology | Paul Mitchell the School Directory | Nails and Barbering';
     if(typeof req.params.leadSource != "undefined" && req.params.leadSource != null)
     {
         params.leadSource = req.params.leadSource;
