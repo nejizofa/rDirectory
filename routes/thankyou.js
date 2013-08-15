@@ -1458,6 +1458,6 @@ exports.index = function(req, res){
     });
 
     params.schoolName = req.params.schoolName;
-    params.title = 'Paul Mitchell the School -- Directory';
+    params.title = 'Thank You For Requesting Information | Paul Mitchell the School';
     res.render('thankyou', params);
 };
