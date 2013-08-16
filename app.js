@@ -32,6 +32,7 @@ if ('development' == app.get('env')) {
 
 app.post('/:schoolName/thankyou', thankyou.index);
 app.post('/thankyou', thankyou.index);
+app.get('/thankyou', thankyou.index);
 app.get('/:leadSource', directory.index);
 app.get('/:schoolName/areyouit', routes.index);
 app.get('/:schoolName/areyouit/:campusId', routes.index);

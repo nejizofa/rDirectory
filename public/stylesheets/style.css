@@ -46,6 +46,14 @@ body {
     color: white;
 }
 
+#wrapThankyou {
+    margin: 0 auto -60px;
+    background-image: url('/images/CurlThankYou.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    max-width: 1160px;
+}
+
 #wrap {
     margin: 0 auto -60px;
     background-image: url('/images/modelBack.png');
