@@ -1353,6 +1353,7 @@ exports.index = function(req, res){
                 {
                     params = school;
                     params.type = "PPC";
+                    params.saveLead = true;
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
