@@ -13,22 +13,34 @@ block content
                         span(style="color:white;") &#8226;
                         li
                             a(href="http://directory.paulmitchell.edu") view all Paul Mitchell School locations
-        div.container
+        div.container(style="height:800px")
             div.row-fluid
                 div.span2.offset2
                     img(src="/images/#{logowhite}")
                 div.span6(style="color: white;")
-                    h1 Paul Mitchell the School
-                        br
-                        strong DIRECTORY
+                    h1 a Paul Mitchell School
             div.row-fluid
-                div.span4.offset3(style="padding-top:30px")
+                div.span4.offset3(style="padding-top:100px")
                     div.alert.alert-success.alert-block
                         h1
                             strong Success!
                         p Thank you for your submission! We will be contacting you soon.
 
             div#footer.row-fluid
-                div.container
+                div.container(style="padding-top:300px;")
                     p Why Choose Paul Mitchell Schools?
                     span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+    if conversionCode
+        script.
+            /* <![CDATA[ */
+            var google_conversion_id = 986875565;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "#{conversionCode}";
+        var google_conversion_value = 0;
+        /* ]]> */
+        script(src="//www.googleadservices.com/pagead/conversion.js")
+        noscript
+            div(style="display:inline;")
+                img(height="1", width="1", style="border-style:none;", alt="", src="//www.googleadservices.com/pagead/conversion/986875565/?value=0&amp;label=#{conversionCode}&amp;guid=ON&amp;script=0")

@@ -521,7 +521,9 @@ var stateProperties = [
                 "zip": 40222,
                 "logo": "/30d8854728d88b73c93c9c7c3e53a740.png",
                 "url": "http://school.paulmitchell.edu/louisville-ky",
-                "campusid": "42"
+                "campusid": "42",
+                "indexCode": "Qn5JCPPtnAgQrY3K1gM",
+                "conversionCode": "qPrtCOvunAgQrY3K1gM"
             }
         ]
     },
@@ -1063,7 +1065,9 @@ var stateProperties = [
                 "zip": 37129,
                 "logo": "/cdb00a4550ca6bb0fdac71bd5cda1a70.png",
                 "url": "http://school.paulmitchell.edu/murfreesboro-tn",
-                "campusid": "52"
+                "campusid": "52",
+                "indexCode": "1QPRCOLd6wYQpsCB0wM",
+                "conversionCode": "A_lCCNre6wYQpsCB0wM"
             },
             {
                 "name": "Memphis TN",
@@ -1083,7 +1087,9 @@ var stateProperties = [
                 "zip": 37013,
                 "logo": "/81b53c5efd41fd10342caf232b7ae87b.png",
                 "url": "http://school.paulmitchell.edu/nashville-tn",
-                "campusid": "54"
+                "campusid": "54",
+                "indexCode": "a1ZzCIHS9QYQv9mQ2AM",
+                "conversionCode": "YUOfCPnS9QYQv9mQ2AM"
             },
             {
                 "name": "Knoxville TN",
@@ -1093,7 +1099,9 @@ var stateProperties = [
                 "zip": 37919,
                 "logo": "/fa6ab36d14d27fefbc9e7e60290e0def.png",
                 "url": "http://knoxville.paulmitchell.edu/knoxville-tn",
-                "campusid": "105"
+                "campusid": "105",
+                "indexCode": "nkP6CNSW7gcQ9LDq3AM",
+                "conversionCode": "V4T7CMyX7gcQ9LDq3AM"
             }
         ]
     },
