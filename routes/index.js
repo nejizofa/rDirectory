@@ -83,6 +83,7 @@ var stateProperties = [
                 "state": "California",
                 "zip": 95841,
                 "logo": "/4394dce89b0be7bfabb36c3ff7939dfd.png",
+                "directory": "sacramento-mti",
                 "url": "http://mti.paulmitchell.edu/sacramento-ca",
                 "campusid": "15"
             },
@@ -1348,7 +1349,15 @@ exports.index = function(req, res){
             else
             {
                 var schoolName = req.params.schoolName;
-                var subName =school.url.substring(school.url.lastIndexOf("/")+1);
+                var subName;
+                if(typeof school.directory != 'undefined')
+                {
+                    subName = school.directory;
+                }
+                else
+                {
+                    subName =school.url.substring(school.url.lastIndexOf("/")+1);
+                }
                 if(schoolName == subName)
                 {
                     params = school;
