@@ -78,13 +78,13 @@ var stateProperties = [
         "schools": [
             {
                 "name": "Sacramento CA",
-                "address": "5231 Madison Avenue",
+                "address": "2100 Arden Way, Suite 265",
                 "city": "Sacramento",
                 "state": "California",
-                "zip": 95841,
-                "logo": "/4394dce89b0be7bfabb36c3ff7939dfd.png",
-                "url": "http://mti.paulmitchell.edu/sacramento-ca",
-                "campusid": "15"
+                "zip": 95825,
+                "logo": "/c203f16975ecdbb371813442a3bb079a.png",
+                "url": "http://sacramento.paulmitchell.edu/sacramento-ca",
+                "campusid": "73"
             },
             {
                 "name": "Costa Mesa CA",
@@ -167,16 +167,6 @@ var stateProperties = [
                 "campusid": "67"
             },
             {
-                "name": "Sacramento CA",
-                "address": "2100 Arden Way, Suite 265",
-                "city": "Sacramento",
-                "state": "California",
-                "zip": 95825,
-                "logo": "/c203f16975ecdbb371813442a3bb079a.png",
-                "url": "http://sacramento.paulmitchell.edu/sacramento-ca",
-                "campusid": "73"
-            },
-            {
                 "name": "Pasadena  CA",
                 "address": "201 East Bay State Street",
                 "city": "Alhambra",
@@ -195,6 +185,17 @@ var stateProperties = [
                 "logo": "/5fb02347473c5af66ae9fa7e779ac998.png",
                 "url": "http://temecula.paulmitchell.edu/temecula-ca",
                 "campusid": "75"
+            },
+            {
+                "name": "Sacramento CA",
+                "address": "5231 Madison Avenue",
+                "city": "Sacramento",
+                "state": "California",
+                "zip": 95841,
+                "logo": "/4394dce89b0be7bfabb36c3ff7939dfd.png",
+                "directory": "sacramento-mti",
+                "url": "http://mti.paulmitchell.edu/sacramento-ca",
+                "campusid": "15"
             }
         ]
     },
@@ -1447,7 +1448,15 @@ exports.index = function(req, res){
             else
             {
                 var schoolName = req.params.schoolName;
-                var subName =school.url.substring(school.url.lastIndexOf("/")+1);
+                var subName;
+                if(typeof school.directory != 'undefined')
+                {
+                    subName = school.directory;
+                }
+                else
+                {
+                    subName =school.url.substring(school.url.lastIndexOf("/")+1);
+                }
                 if(schoolName == subName)
                 {
                     params = school;
