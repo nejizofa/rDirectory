@@ -401,6 +401,16 @@ var stateProperties = [
         "name": "Illinois",
         "schools": [
             {
+                "name": "Lombard IL",
+                "address": "106 Yorktown Center",
+                "city": "Lombard",
+                "state": "Illinois",
+                "zip": 60148,
+                "logo": "/lombard.png",
+                "url": "http://school.paulmitchell.edu/lombard-il",
+                "campusid": "120"
+            },
+            {
                 "name": "Chicago IL",
                 "address": "1225 South Halsted Street",
                 "city": "Chicago",
