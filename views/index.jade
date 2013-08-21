@@ -38,16 +38,14 @@ block content
                             div.formField.well(style="width:220px; margin-left:65%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
                                 form#wideform(action='/#{schoolName}/thankyou',method='post', style="margin:0px;")
                                     div(style="width:100%")
-                                        input(type="text", placeholder="Name", required="true", name="name")
+                                        input(type="text", placeholder="Name", required=true, name="name")
 
-                                    input(type="email", placeholder="Email", required="true", name="email")
+                                    input(type="email", placeholder="Email", required=true, name="email")
                                     input(type="hidden", value="#{type}", name="type")
                                     input(type="tel", placeholder="Text me at: Ex 888-888-8888", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}')
                                     select(name="program")
-                                        option(value="Cosmetology") Cosmetology
-                                        option(value="Esthetics") Esthetics
-                                        option(value="Barbering") Barbering
-                                        option(value="Nails") Nails
+                                        each item in programs
+                                            option(value=item) #{item}
                                     textarea(placeholder="Note", name="note")
                                     input.hidden(name="campusid", value="#{campusid}")
                                     button.btn.btn-success.btn-large(style="width:100%;") Get More Info Today
@@ -74,22 +72,24 @@ block content
                                         img(src="/images/areyouit.png")
                             div#footer(style="margin-top:20px;")
                                 div(style="color:white; font-size:140%;")
-                                    span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                                    if(financialAid)
+                                        span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                                    else
+                                        span Incredible world-wide network &#8226; High income potential
+
 
                         div#footer.visible-phone.well.whiteBottom
                             div.formField.well(style="width:220px; margin-left:65%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
                                 form#wideform(action='/#{schoolName}/thankyou',method='post', style="margin:0px;")
                                     div(style="width:100%")
-                                        input(type="text", placeholder="Name", required="true", name="name")
+                                        input(type="text", placeholder="Name", required=true, name="name")
 
-                                    input(type="email", placeholder="Email", required="true", name="email")
+                                    input(type="email", placeholder="Email", required=true, name="email")
                                     input(type="hidden", value="#{type}", name="type")
                                     input(type="tel", placeholder="Text me at: Ex 888-888-8888", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}')
                                     select(name="program")
-                                        option(value="Cosmetology") Cosmetology
-                                        option(value="Esthetics") Esthetics
-                                        option(value="Barbering") Barbering
-                                        option(value="Nails") Nails
+                                        each item in programs
+                                            option(value=item) #{item}
                                     textarea(placeholder="Note", name="note")
                                     input.hidden(name="campusid", value="#{campusid}")
                                     button.btn.btn-success.btn-large(style="width:100%;") Get More Info Today

@@ -29,7 +29,10 @@ block content
             div#footer.row-fluid
                 div.container(style="padding-top:300px;")
                     p Why Choose Paul Mitchell Schools?
-                    span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                    if(financialAid)
+                        span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                    else
+                        span Incredible world-wide network &#8226; High income potential
     if conversionCode
         script.
             /* <![CDATA[ */

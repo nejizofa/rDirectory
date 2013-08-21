@@ -1341,7 +1341,7 @@ var stateProperties = [
 var _ = require('lodash');
 
 exports.index = function(req, res){
-    var mysql      = require('mysql');
+   /* var mysql      = require('mysql');
     var fs = require('fs');
     var connection = mysql.createConnection({
         host     : 'pmaedb.ca5ujtx5dzto.us-west-1.rds.amazonaws.com',
@@ -1391,7 +1391,7 @@ exports.index = function(req, res){
             connection.end();
         });
     });
-    /*var json2csv = require('json2csv');
+    var json2csv = require('json2csv');
     var start = 0;
     getRecords(start);
 
@@ -1449,6 +1449,10 @@ exports.index = function(req, res){
                 if(campusId == school.campusid)
                 {
                     params = school;
+                    if(_.isUndefined(params.financialAid)|| _.isNull(params.financialAid))
+                    {
+                        params.financialAid = true;
+                    }
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
@@ -1470,6 +1474,10 @@ exports.index = function(req, res){
                 if(schoolName == subName)
                 {
                     params = school;
+                    if(_.isUndefined(params.financialAid)|| _.isNull(params.financialAid))
+                    {
+                        params.financialAid = true;
+                    }
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
                     var extenstion = school.logo.substring(school.logo.lastIndexOf("."));
                     params.logowhite = logoname+"-white"+extenstion;
