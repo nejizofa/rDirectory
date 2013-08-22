@@ -84,7 +84,8 @@ var stateProperties = [
                 "zip": 95825,
                 "logo": "/c203f16975ecdbb371813442a3bb079a.png",
                 "url": "http://sacramento.paulmitchell.edu/sacramento-ca",
-                "campusid": "73"
+                "campusid": "73",
+                "programs": ['Cosmetology', 'Esthetics']
             },
             {
                 "name": "Costa Mesa CA",
