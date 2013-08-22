@@ -408,7 +408,9 @@ var stateProperties = [
                 "zip": 60148,
                 "logo": "/lombard.png",
                 "url": "http://school.paulmitchell.edu/lombard-il",
-                "campusid": "120"
+                "campusid": "120",
+                "financialAid": false,
+                "programs": ['Cosmetology']
             },
             {
                 "name": "Chicago IL",
@@ -418,7 +420,8 @@ var stateProperties = [
                 "zip": 60607,
                 "logo": "/81e27c70896a1369d8e3d7018e37c151.png",
                 "url": "http://school.paulmitchell.edu/chicago-il",
-                "campusid": "36"
+                "campusid": "36",
+                "programs": ['Cosmetology']
             },
             {
                 "name": "Normal IL",
@@ -941,7 +944,8 @@ var stateProperties = [
                 "zip": 74134,
                 "logo": "/9790d74b12e3b6c0afb104e71b022d1f.png",
                 "url": "http://school.paulmitchell.edu/tulsa-ok",
-                "campusid": "109"
+                "campusid": "109",
+                "financialAid": false
             },
             {
                 "name": "Ardmore OK",
@@ -1322,9 +1326,7 @@ var stateProperties = [
                 "zip": 54115,
                 "logo": "/87c6f2607cc85943f07392183d58cb21.png",
                 "url": "http://greenbay.paulmitchell.edu/green-bay-wi",
-                "campusid": "104",
-                "financialAid": false,
-                "programs": ['Cosmetology', 'Esthetics', 'Barbering', 'Nails']
+                "campusid": "104"
             }
         ]
     },
