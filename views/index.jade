@@ -95,18 +95,17 @@ block content
                                     input.hidden(name="campusid", value="#{campusid}")
                                     button.btn.btn-success.btn-large(style="width:100%;") Get More Info Today
                             div(style="color:black; font-size:140%") Careers in beauty, cosmetology and hair design today can be both personally and financially rewarding. Following your beauty school education as a Paul Mitchell-trained professional, you will realize your artistic dreams and work as a beauty professional almost anywhere in the world. Whether you choose to create fashion behind a chair in the salon; own your own salon or spa business; or opt for the excitement of a career in fashion, feature film, TV, or product education, a Paul Mitchell School will help you reach your artistic, technical and lifestyle goals.
-        if(type == "PPC")
-            if indexCode
-                    script.
-                        /* <![CDATA[ */
-                        var google_conversion_id = 986875565;
-                        var google_conversion_language = "en";
-                        var google_conversion_format = "3";
-                        var google_conversion_color = "ffffff";
-                        var google_conversion_label = "#{indexCode}";
-                        var google_conversion_value = 0;
-                        /* ]]> */
-                    script(src="//www.googleadservices.com/pagead/conversion.js")
-                    noscript
-                        div(style="display:inline;")
-                            img(height="1", width="1", style="border-style:none;", alt="", src="//www.googleadservices.com/pagead/conversion/986875565/?value=0&amp;label=#{indexCode}&amp;guid=ON&amp;script=0")
+        if indexCode
+            script.
+                /* <![CDATA[ */
+                var google_conversion_id = 986875565;
+                var google_conversion_language = "en";
+                var google_conversion_format = "3";
+                var google_conversion_color = "ffffff";
+                var google_conversion_label = "#{indexCode}";
+                var google_conversion_value = 0;
+                /* ]]> */
+            script(src="//www.googleadservices.com/pagead/conversion.js")
+            noscript
+                div(style="display:inline;")
+                    img(height="1", width="1", style="border-style:none;", alt="", src="//www.googleadservices.com/pagead/conversion/986875565/?value=0&amp;label=#{indexCode}&amp;guid=ON&amp;script=0")
