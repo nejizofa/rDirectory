@@ -1341,137 +1341,6 @@ var stateProperties = [
 var _ = require('lodash');
 
 exports.index = function(req, res){
-    var mysql      = require('mysql');
-    var fs = require('fs');
-    var connection = mysql.createConnection({
-        host     : 'pmaedb.ca5ujtx5dzto.us-west-1.rds.amazonaws.com',
-        user     : 'pmaelive',
-        password : 'blind4cr3',
-        database : 'pmaelive'
-    });
-
-    fs.appendFile("./public/records.json", '\n'+JSON.stringify(req.body), function(err) {
-        if(err) {
-            console.log(err);
-        }
-    });
-
-    connection.connect();
-    var name = req.body.name;
-    name = name.trim();
-    name = name.split(" ");
-
-    var address = {addressee_firstname: name[0], addressee_lastname: name[1]};
-    connection.query('INSERT INTO typef_address SET ?', address, function(err, result){
-        if(err)
-        {
-            console.log(err);
-            return;
-        }
-
-        var person = {campusid: req.body.campusid, firstname: name[0], lastname: name[1], addressid: result.insertId, datecreated: new Date()};
-        connection.query('INSERT INTO typef_person SET ?', person, function(err, result) {
-            if (err)
-            {
-                console.log(err)
-                return;
-            }
-
-            var email = {personid: result.insertId, email: req.body.email, descr: 'Personal', main:1};
-
-            connection.query('INSERT INTO typef_person_email SET ?', email, function(err, result){
-                if (err)
-                {
-                    console.log(err)
-                    return;
-                }
-            });
-
-            var phone = {personid: result.insertId, phone: req.body.phone, descr: 'Home Mobile', main:1};
-            connection.query('INSERT INTO typef_person_phone SET ?', phone, function(err, result){
-                if (err)
-                {
-                    console.log(err)
-                    return;
-                }
-            });
-            if(typeof req.body.type == 'undefined' || req.body.type != 'PPC')
-            {
-                var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "Directory: "+req.body.type};
-            }
-            else
-            {
-                var enroll = {enrollid: result.insertId, source: "PPC", sourcetext: "Local PPC Campaign"};
-            }
-
-            connection.query('INSERT INTO pmae_enroll SET ?', enroll, function(err, result){
-                if (err)
-                {
-                    console.log(err)
-                    return;
-                }
-            });
-            if(req.body.note != '')
-            {
-                var note = {linkid: result.insertId, linktype: 'enroll', note: "Course of Interest: "+req.body.program+" Additional Notes: "+ req.body.note , datecreated: new Date()};
-                connection.query('INSERT INTO typef_note SET ?', note, function(err, result){
-                    if (err)
-                    {
-                        console.log(err)
-                        return;
-                    }
-                })
-            }
-            connection.end();
-        });
-    });
-    /*var json2csv = require('json2csv');
-    var start = 0;
-    getRecords(start);
-
-    function getRecords(start){
-        var query = "SELECT DISTINCT(typef_person.personid), campusid,CONCAT(firstname, ' ', lastname) as name, email, phone, address1, address2, city, state, postal, birthday, marital, citizen,whybeauty, handed, howhear, highschool, highschoolyear, college, specialinterests, occupation, supervisor, additionalinfo, recemail, enrolldate, enrollrating, contactmethod, contacttime, pmae_enroll.status, typef_person.datecreated, graduated FROM pmaelive.typef_person LEFT JOIN pmaelive.typef_person_email ON typef_person_email.personid = typef_person.personid LEFT JOIN pmaelive.typef_person_phone ON typef_person_phone.personid = typef_person.personid LEFT JOIN pmaelive.typef_address ON typef_address.addressid = typef_person.addressid LEFT JOIN pmaelive.pmae_enroll ON pmae_enroll.enrollid = typef_person.personid WHERE datecreated >= '2010-01-01 00:00:00' GROUP BY typef_person.personid ORDER BY typef_person.personid ASC LIMIT "+start+", 10000";
-        connection.query(query, function(err, result){
-            if(err)
-            {
-                console.log(err);
-            }
-            else
-            {
-                console.log(result.length);
-
-                json2csv({data: result, fields: ['personid','campusid','name','email','phone','address1','address2','city','state','postal','birthday','marital','citizen','whybeauty','handed','howhear','highschool','highschoolyear','college','specialinterests','occupation','supervisor','additionalinfo','recemail','enrolldate','enrollrating','contactmethod','contacttime','status','datecreated','graduated']}, function(err, csv) {
-                    if (err) console.log(err);
-                    if(start == 0)
-                    {
-                        fs.writeFile('./public/records.csv', csv, function(err) {
-                            if (err) throw err;
-                            console.log('file created');
-                        });
-                    }
-                    else
-                    {
-                        var position = csv.indexOf('\n');
-                        if (position != -1) { // if new line element found
-                            csv = csv.substr(position);
-                            fs.appendFile('./public/records.csv', csv, function(err) {
-                                if (err) throw err;
-                                console.log('file appended');
-                            });
-                        }
-                    }
-
-                });
-                if(result.length > 0)
-                {
-
-                    start = start + result.length;
-                    console.log(start);
-                    getRecords(start);
-                }
-            }
-        });
-    } */
 
 
     var campusId = req.params.campusId;
@@ -1528,5 +1397,101 @@ exports.index = function(req, res){
 
     params.schoolName = req.params.schoolName;
     params.title = 'Thank You For Requesting Information | Paul Mitchell the School';
-    res.render('thankyou', params);
+
+
+    var name = req.body.name;
+    name = name.trim();
+    name = name.split(" ");
+    if(name != '')
+    {
+        var mysql      = require('mysql');
+        var fs = require('fs');
+        var connection = mysql.createConnection({
+            host     : 'pmaedb.ca5ujtx5dzto.us-west-1.rds.amazonaws.com',
+            user     : 'pmaelive',
+            password : 'blind4cr3',
+            database : 'pmaelive'
+        });
+        connection.connect();
+        fs.appendFile("./public/records.json", '\n'+JSON.stringify(req.body), function(err) {
+            if(err) {
+                console.log(err);
+            }
+        });
+        var address = {addressee_firstname: name[0], addressee_lastname: name[1]};
+        connection.query('INSERT INTO typef_address SET ?', address, function(err, result){
+            if(err)
+            {
+                console.log(err);
+                return;
+            }
+
+            var person = {campusid: req.body.campusid, firstname: name[0], lastname: name[1], addressid: result.insertId, datecreated: new Date()};
+            connection.query('INSERT INTO typef_person SET ?', person, function(err, result) {
+                if (err)
+                {
+                    console.log(err)
+                    return;
+                }
+
+                var email = {personid: result.insertId, email: req.body.email, descr: 'Personal', main:1};
+
+                connection.query('INSERT INTO typef_person_email SET ?', email, function(err, result){
+                    if (err)
+                    {
+                        console.log(err)
+                        return;
+                    }
+                });
+
+                var phone = {personid: result.insertId, phone: req.body.phone, descr: 'Home Mobile', main:1};
+                connection.query('INSERT INTO typef_person_phone SET ?', phone, function(err, result){
+                    if (err)
+                    {
+                        console.log(err)
+                        return;
+                    }
+                });
+                if(typeof req.body.type == 'undefined' || req.body.type != 'PPC')
+                {
+                    var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "Directory: "+req.body.type};
+                }
+                else
+                {
+                    var enroll = {enrollid: result.insertId, source: "PPC", sourcetext: "Local PPC Campaign"};
+                }
+
+                connection.query('INSERT INTO pmae_enroll SET ?', enroll, function(err, result){
+                    if (err)
+                    {
+                        console.log(err)
+                        return;
+                    }
+                });
+                if(req.body.note != '')
+                {
+                    var note = {linkid: result.insertId, linktype: 'enroll', note: "Course of Interest: "+req.body.program+" Additional Notes: "+ req.body.note , datecreated: new Date()};
+                    connection.query('INSERT INTO typef_note SET ?', note, function(err, result){
+                        if (err)
+                        {
+                            console.log(err)
+                            return;
+                        }
+                    })
+                }
+                connection.end();
+            });
+        });
+
+        res.render('thankyou', params);
+    }
+    else
+    {
+        res.render('error', params);
+    }
+
+
+
+
+
 };

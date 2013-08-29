@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+
+    div#wrapThankyou
+        div.navbar.navbar-inverse
+            div.navbar-inner
+                div.container
+                    ul.nav
+                        li
+                            a(href="http://www.paulmitchell.edu") paulmitchell.edu
+                        span(style="color:white;") &#8226;
+                        li
+                            a(href="http://directory.paulmitchell.edu") view all Paul Mitchell School locations
+        div.container(style="height:800px")
+            div.row-fluid
+                div.span2.offset2
+                    img(src="/images/#{logowhite}")
+                div.span6(style="color: white;")
+                    h1 a Paul Mitchell School
+            div.row-fluid
+                div.span4.offset3(style="padding-top:100px")
+                    div.alert.alert-warning.alert-block
+                        h1
+                            strong Error!
+                        p There was an error processing your submission please try again.
+
+            div#footer.row-fluid
+                div.container(style="padding-top:300px;")
+                    p Why Choose Paul Mitchell Schools?
+                    if(financialAid)
+                        span Incredible world-wide network &#8226; High income potential &#8226; Financial aid to qualified students
+                    else
+                        span Incredible world-wide network &#8226; High income potential
