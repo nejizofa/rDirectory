@@ -1413,7 +1413,12 @@ exports.index = function(req, res){
             database : 'pmaelive'
         });
         connection.connect();
-        fs.appendFile("./public/records.json", '\n'+JSON.stringify(req.body), function(err) {
+        var bodyparams = req.body;
+        bodyparams.school = {};
+        bodyparams.school.name = params.name;
+        bodyparams.school.state = params.state;
+        bodyparams.school.city = params.city;
+        fs.appendFile("./public/records.json", '\n'+JSON.stringify(bodyparams), function(err) {
             if(err) {
                 console.log(err);
             }
