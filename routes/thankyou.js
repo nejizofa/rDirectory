@@ -1418,12 +1418,15 @@ exports.index = function(req, res){
         bodyparams.school.name = params.name;
         bodyparams.school.state = params.state;
         bodyparams.school.city = params.city;
-        console.log(JSON.stringify(bodyparams));
         fs.appendFile("./public/records.json", '\n'+JSON.stringify(bodyparams), function(err) {
             if(err) {
                 console.log(err);
             }
         });
+        if(typeof name[1] == 'undefined' || name[1] == null)
+        {
+            name[1] = 'N/A';
+        }
         var address = {addressee_firstname: name[0], addressee_lastname: name[1]};
         connection.query('INSERT INTO typef_address SET ?', address, function(err, result){
             if(err)
@@ -1440,24 +1443,30 @@ exports.index = function(req, res){
                     return;
                 }
 
-                var email = {personid: result.insertId, email: req.body.email, descr: 'Personal', main:1};
+                if(typeof req.body.email != 'undefined' && req.body.email != null)
+                {
+                    var email = {personid: result.insertId, email: req.body.email, descr: 'Personal', main:1};
+                    connection.query('INSERT INTO typef_person_email SET ?', email, function(err, result){
+                        if (err)
+                        {
+                            console.log(err)
+                            return;
+                        }
+                    });
+                }
 
-                connection.query('INSERT INTO typef_person_email SET ?', email, function(err, result){
-                    if (err)
-                    {
-                        console.log(err)
-                        return;
-                    }
-                });
 
-                var phone = {personid: result.insertId, phone: req.body.phone, descr: 'Home Mobile', main:1};
-                connection.query('INSERT INTO typef_person_phone SET ?', phone, function(err, result){
-                    if (err)
-                    {
-                        console.log(err)
-                        return;
-                    }
-                });
+                if(typeof req.body.email != 'undefined' && req.body.email != null)
+                {
+                    var phone = {personid: result.insertId, phone: req.body.phone, descr: 'Home Mobile', main:1};
+                    connection.query('INSERT INTO typef_person_phone SET ?', phone, function(err, result){
+                        if (err)
+                        {
+                            console.log(err)
+                            return;
+                        }
+                    });
+                }
                 if(typeof req.body.type == 'undefined' || req.body.type != 'PPC')
                 {
                     var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "Directory: "+req.body.type};
@@ -1474,7 +1483,7 @@ exports.index = function(req, res){
                         return;
                     }
                 });
-                if(req.body.note != '')
+                if(typeof req.body.note != 'undefined' && req.body.note != '')
                 {
                     var note = {linkid: result.insertId, linktype: 'enroll', note: "Course of Interest: "+req.body.program+" Additional Notes: "+ req.body.note , datecreated: new Date()};
                     connection.query('INSERT INTO typef_note SET ?', note, function(err, result){
