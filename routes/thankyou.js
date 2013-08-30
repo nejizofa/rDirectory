@@ -1418,6 +1418,7 @@ exports.index = function(req, res){
         bodyparams.school.name = params.name;
         bodyparams.school.state = params.state;
         bodyparams.school.city = params.city;
+        console.log(JSON.stringify(bodyparams));
         fs.appendFile("./public/records.json", '\n'+JSON.stringify(bodyparams), function(err) {
             if(err) {
                 console.log(err);
