@@ -39,9 +39,9 @@ block content
                             div.formField.well(style="width:220px; margin-left:65%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
                                 form#wideform(action='/#{schoolName}/thankyou',method='post', style="margin:0px;")
                                     div(style="width:100%")
-                                        input(type="text", placeholder="Name", required=true, name="name")
+                                        input(type="text", placeholder="Name", required, name="name")
 
-                                    input(type="email", placeholder="Email", required=true, name="email")
+                                    input(type="email", placeholder="Email", required, name="email")
                                     input(type="hidden", value="#{type}", name="type")
                                     input(type="tel", required, placeholder="Text me at: Ex 888-888-8888", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}')
                                     select(name="program")
@@ -83,9 +83,9 @@ block content
                             div.formField.well(style="width:220px; margin-left:65%; margin-top:35px; padding:10px; border:3px solid #373535; background:#0069ad;")
                                 form#wideform(action='/#{schoolName}/thankyou',method='post', style="margin:0px;")
                                     div(style="width:100%")
-                                        input(type="text", placeholder="Name", required=true, name="name")
+                                        input(type="text", placeholder="Name", required, name="name")
 
-                                    input(type="email", placeholder="Email", required=true, name="email")
+                                    input(type="email", placeholder="Email", required, name="email")
                                     input(type="hidden", value="#{type}", name="type")
                                     input(type="tel", required, placeholder="Text me at: Ex 888-888-8888", name="phone", pattern='\\d{3}[\\-]\\d{3}[\\-]\\d{4}')
                                     select(name="program")
