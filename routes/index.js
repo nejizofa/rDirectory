@@ -1060,7 +1060,8 @@ var stateProperties = [
                 "zip": 29615,
                 "logo": "/GREENVILLE.png",
                 "url": "http://school.paulmitchell.edu/greenville-sc",
-                "campusid": "119"
+                "campusid": "119",
+                "financialAid": false
             }
         ]
     },
