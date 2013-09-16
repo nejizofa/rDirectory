@@ -1324,7 +1324,7 @@ var stateProperties = [
                 "url": "http://greenbay.paulmitchell.edu/green-bay-wi",
                 "campusid": "104",
                 "financialAid": false,
-                "programs": ['Cosmetology', 'Esthetics', 'Barbering', 'Nails']
+                "programs": ['Cosmetology', 'Esthetics', 'Nails']
             }
         ]
     },

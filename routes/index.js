@@ -1361,7 +1361,7 @@ exports.index = function(req, res){
                     }
                     if(_.isUndefined(params.programs)|| _.isNull(params.programs))
                     {
-                        params.programs = ['Cosmetology', 'Esthetics', 'Barbering', 'Nails'];
+                        params.programs = ['Cosmetology', 'Esthetics', 'Nails'];
                     }
                     params.type = req.session.leadSource;
                     var logoname = school.logo.substring(0, school.logo.lastIndexOf("."));
@@ -1391,7 +1391,7 @@ exports.index = function(req, res){
                     }
                     if(_.isUndefined(params.programs)|| _.isNull(params.programs))
                     {
-                        params.programs = ['Cosmetology', 'Esthetics', 'Barbering', 'Nails'];
+                        params.programs = ['Cosmetology', 'Esthetics','Nails'];
                     }
                     params.type = "PPC";
                     params.saveLead = true;
