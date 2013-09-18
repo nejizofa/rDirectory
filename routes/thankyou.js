@@ -1469,11 +1469,11 @@ exports.index = function(req, res){
                 }
                 if(typeof req.body.type == 'undefined' || req.body.type != 'PPC')
                 {
-                    var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "Directory: "+req.body.type};
+                    var enroll = {enrollid: result.insertId, source: "Directory", sourcetext: "Directory: "+req.body.type, 'position':1};
                 }
                 else
                 {
-                    var enroll = {enrollid: result.insertId, source: "PPC", sourcetext: "Local PPC Campaign"};
+                    var enroll = {enrollid: result.insertId, source: "PPC", sourcetext: "Local PPC Campaign", 'position':1};
                 }
 
                 connection.query('INSERT INTO pmae_enroll SET ?', enroll, function(err, result){
