@@ -1512,18 +1512,18 @@ exports.index = function(req, res){
     name = name.trim();
     name = name.split(" ");
     var userObj = {};
-    userObj.name = req.body.name;
-    userObj.apiToken = params.apiToken;
+    userObj.name = String(req.body.name);
+    userObj.apiToken = String(params.apiToken);
     userObj.type = 'Contact';
     userObj.attributes = {};
 
     if(typeof req.body.email != 'undefined' && req.body.email != null)
     {
-        userObj.attributes.email = req.body.email;
+        userObj.attributes.email = String(req.body.email);
     }
     if(typeof req.body.phone != 'undefined' && req.body.phone != null)
     {
-        userObj.attributes.phone = req.body.phone;
+        userObj.attributes.phone = String(req.body.phone);
     }
     if(typeof req.body.program != 'undefined' && req.body.program != '')
     {
@@ -1551,6 +1551,8 @@ exports.index = function(req, res){
         res2.on('data', function(d) {
             console.log("res.on data");
             console.log(d);
+            console.log(req.headers);
+            console.log(req.body);
         });
         res2.on('end', function(){ // see http nodejs documentation to see end
             console.log("\nfinished posting message");
