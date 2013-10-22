@@ -1452,7 +1452,7 @@ var _ = require('lodash');
 exports.index = function(req, res){
 
 
-    var campusId = req.params.campusId;
+    var campusId = req.params.campusid;
     var params = {};
     _.each(stateProperties, function(state){
         _.each(state.schools, function(school){
