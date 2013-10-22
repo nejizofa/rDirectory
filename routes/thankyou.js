@@ -1451,8 +1451,11 @@ var _ = require('lodash');
 
 exports.index = function(req, res){
 
-
     var campusId = req.params.campusid;
+    if(typeof campusId == 'undefined')
+    {
+        campusId = req.body.campusid;
+    }
     var params = {};
     _.each(stateProperties, function(state){
         _.each(state.schools, function(school){
@@ -1664,9 +1667,6 @@ exports.index = function(req, res){
     {
         res.render('error', params);
     }
-
-
-
 
 
 };
