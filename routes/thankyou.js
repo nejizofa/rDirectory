@@ -1567,7 +1567,7 @@ exports.index = function(req, res){
 
     if(name != '')
     {
-        var mysql      = require('mysql');
+        /*var mysql      = require('mysql');
         var fs = require('fs');
         var connection = mysql.createConnection({
             host     : 'pmaedb.ca5ujtx5dzto.us-west-1.rds.amazonaws.com',
@@ -1659,7 +1659,7 @@ exports.index = function(req, res){
                 }
                 connection.end();
             });
-        });
+        }); */
 
         res.render('thankyou', params);
     }
