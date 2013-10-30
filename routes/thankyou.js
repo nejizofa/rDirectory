@@ -1565,6 +1565,18 @@ exports.index = function(req, res){
     postReq.write(postData);
     postReq.end();
 
+    var fs = require('fs');
+    var bodyparams = req.body;
+    bodyparams.school = {};
+    bodyparams.school.name = params.name;
+    bodyparams.school.state = params.state;
+    bodyparams.school.city = params.city;
+    fs.appendFile("./records.json", '\n'+JSON.stringify(bodyparams), function(err) {
+        if(err) {
+            console.log(err);
+        }
+    });
+
     if(name != '')
     {
         /*var mysql      = require('mysql');
