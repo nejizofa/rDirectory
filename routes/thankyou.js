@@ -1539,7 +1539,7 @@ exports.index = function(req, res){
     var postData = JSON.stringify(userObj);
 
     var options = {
-        host: 'api.pm.edu',
+        host: 'api.paulmitchell.edu',
         port: 3004,
         path: '/?apiKey=2c0fddf933e46b010c88216d',
         method: 'POST',
