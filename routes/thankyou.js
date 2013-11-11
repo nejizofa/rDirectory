@@ -1536,6 +1536,7 @@ exports.index = function(req, res){
     {
         userObj.attributes.contactNote += " Additional Notes: "+ req.body.note;
     }
+    userObj.attributes.referralType = ['358d5fef4277c6e5735d6f88'];
     var postData = JSON.stringify(userObj);
 
     var options = {
