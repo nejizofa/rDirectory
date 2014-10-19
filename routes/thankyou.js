@@ -1541,7 +1541,7 @@ exports.index = function(req, res){
 
     var options = {
         host: 'api.paulmitchell.edu',
-        port: 3004,
+        port: 443,
         path: '/?apiKey=2c0fddf933e46b010c88216d',
         method: 'POST',
         headers: {
@@ -1549,8 +1549,8 @@ exports.index = function(req, res){
             'Content-Length'  : postData.length
         }
     };
-    var http = require('http');
-    var postReq = http.request(options, function(res2) {
+    var https = require('https');
+    var postReq = https.request(options, function(res2) {
         res2.setEncoding('utf8');
         res2.on('data', function(d) {
             console.log("res.on data");
